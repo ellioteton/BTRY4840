@@ -43,6 +43,5 @@ calculate_distance<-function(distance_metric){
 }
   
 calculate_distance("euclidean")
-calculate_distance("manhattan")
 
 message(Sys.time())

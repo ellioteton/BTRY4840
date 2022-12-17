@@ -75,7 +75,7 @@ sample <- RunUMAP(sample, nn.name = "dorc_rna_weighted.nn", reduction.name = "do
 sample <- FindClusters(sample, graph.name = "dorc_rna_wsnn", algorithm = 3, resolution = 1, verbose = FALSE)
 p1 <- DimPlot(sample, reduction = 'dorc_rna_wnn.umap', label = TRUE, repel = TRUE, label.size = 2.5) + NoLegend()
 p2 <- DimPlot(sample, reduction = 'dorc_rna_wnn.umap', group.by = 'predicted.celltype.l2', label = TRUE, repel = TRUE, label.size = 2.5) + NoLegend()
-ggsave(paste0(output_path,"weighted_multimodal_umap.jpeg"),plot=p1+p2,device="jpeg")
+ggsave(paste0(output_path,"weighted_multimodal_umap.jpeg"),plot=p1+p2,device="jpeg",width=10,height=5)
 
 saveRDS(sample,paste0(output_path,"04_completed_knn.rds"))
 message(Sys.time())
